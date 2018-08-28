@@ -1,0 +1,235 @@
+Занятие 6. Цикл while
+Задача «Список квадратов»
+n = int(input())
+x = 1
+while x ** 2 <= n:
+    print(x ** 2)
+    x += 1
+
+Занятие 6. Цикл while
+Задача «Минимальный делитель»
+n = int(input())
+x = 2
+while n % x != 0:
+    x += 1
+print(x)
+
+Занятие 6. Цикл while
+Задача «Степень двойки»
+N = int(input())
+x = 1
+a = 0
+while N >= x * 2:
+    x *= 2
+    a += 1
+print(a, x)
+
+Занятие 6. Цикл while
+Задача «Утренняя пробежка»
+x = int(input())
+y = int(input())
+day = 1
+while x < y:
+    x = x * 1.1
+    day += 1
+print(day)
+
+Занятие 6. Цикл while
+Задача «Длина последовательности»
+n = 0
+while int(input()) != 0:
+    n += 1
+print(n)
+
+Занятие 6. Цикл while
+Задача «Сумма последовательности»
+a = int(input())
+x = 0
+while a != 0:
+    x += a
+    a = int(input())
+print(x)
+
+Занятие 6. Цикл while
+Задача «Среднее значение последовательности»
+n = int(input())
+sum = 0
+count = 0
+while n != 0:
+    sum += n
+    count += 1
+    n = int(input())
+print(sum / count)
+
+Занятие 6. Цикл while
+Задача «Сумма последовательности»
+a = -1
+maxi = 0
+while a != 0:
+    a = int(input())
+    if a >= maxi:
+        maxi = a
+print(maxi)
+
+
+Занятие 6. Цикл while
+Задача «Среднее значение последовательности»
+n = int(input())
+sum = 0
+count = 0
+while n != 0:
+    sum += n
+    count += 1
+    n = int(input())
+print(sum / count)
+
+
+Занятие 6. Цикл while
+Задача «Максимум последовательности»
+a = -1
+maxi = 0
+while a != 0:
+    a = int(input())
+    if a >= maxi:
+        maxi = a
+print(maxi)
+
+
+Занятие 6. Цикл while
+Задача «Индекс максимума последовательности»
+a = -1
+maxi = 0
+index = -1
+count = 0
+while a != 0:
+    a = int(input())
+    if a > maxi:
+        maxi = a
+        index = count
+    count += 1
+print(index)
+
+
+Занятие 6. Цикл while
+Задача «Количество четных элементов последовательности»
+a = -1
+even_count = 0
+while a != 0:
+    a = int(input())
+    if a % 2 == 0 and a != 0:
+        even_count += 1
+print(even_count)
+
+
+Занятие 6. Цикл while
+Задача «Количество элементов, которые больше предыдущего»
+last = 0
+a = -1
+count = -1
+while a != 0:
+    a = int(input())
+    if a > last:
+        count += 1
+    last = a
+print(count)
+
+
+Занятие 6. Цикл while
+Задача «Второй максимум»
+max_1 = int(input())
+max_2 = int(input())
+if max_2 > max_1:
+    max_1, max_2 = max_2, max_1
+a = int(input())
+while a != 0:
+    if a > max_1:
+        max_1, max_2 = a, max_1
+    elif a > max_2:
+        max_2 = a
+    a = int(input())
+print(max_2)
+
+
+Занятие 6. Цикл while
+Задача «Количество элементов, равных максимуму»
+count = 1
+a = int(input())
+maxi = 0
+while a != 0:
+    b = maxi
+    if a > maxi:
+        maxi = a
+        count = 1
+    elif a == b:
+        count += 1
+    a = int(input())
+print(count)
+
+
+Занятие 6. Цикл while
+Задача «Числа Фибоначчи»
+n = int(input())
+a = 0
+b = 1
+count = 0
+c = 0
+if n == 0:
+    print(0)
+elif n == 1:
+    print(1)
+elif n > 1:
+    while count != n -1:
+        c = a + b
+        a, b = b, c
+        count += 1
+    print(c)
+
+
+Занятие 6. Цикл while
+Задача «Номер числа Фибоначчи»
+A = int(input())
+a, b = 0, 1
+count = 1
+while A != b:
+    a, b = b, a + b
+    count += 1
+    if A < b:
+        count = -1
+        break
+print(count)
+
+
+Занятие 6. Цикл while
+Задача «Максимальное число идущих подряд равных элементов»
+prev = int(input()) 
+actual = int(input())
+count = 1
+count_max = 1
+while actual != 0:
+    if actual == prev:
+        count += 1
+    elif actual != prev:
+        count = 1
+    if count > count_max:
+        count_max = count
+    prev, actual = actual, int(input()) 
+print(count_max)
+
+Занятие 6. Цикл while
+Задача «Стандартное отклонение»
+from math import sqrt
+n = -1
+summa = 0
+a = None
+sequence = []
+summand = 0
+while a != 0:
+    a = int(input())
+    summa += a
+    n += 1
+    sequence.append(a)
+s = (summa)/n
+for i in range(len(sequence) - 1):
+    summand += (sequence[i] - s) ** 2
+st = sqrt(summand / (n - 1))
+print(st)
