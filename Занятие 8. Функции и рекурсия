@@ -1,0 +1,67 @@
+Занятие 8. Функции и рекурсия
+Задача «Длина отрезка»
+from math import sqrt
+def distance():
+    x1 = float(input())
+    y1 = float(input())
+    x2 = float(input())
+    y2 = float(input())
+    a = abs(x2 - x1)
+    b = abs(y2 - y1)
+    c_kvadrat = a ** 2 + b ** 2
+    c = sqrt(c_kvadrat)
+    print(c)
+distance()
+
+
+Занятие 8. Функции и рекурсия
+Задача «Длина отрезка»
+def power(a, n):
+    if n == 0:
+        return 1
+    elif n > 0:
+        while n != 0:
+            return a * power(a, n - 1)
+    elif n < 0:
+        while n != 0:
+            return (a ** -1) * power(a, n + 1)
+a = float(input())
+n = int(input())
+print(power(a, n))
+
+
+Занятие 8. Функции и рекурсия
+Задача «Большие буквы»
+def capitalize(word):
+    return word.title()
+print(capitalize(word = input()))
+
+
+Занятие 8. Функции и рекурсия
+Задача «Возведение в степень»
+def power(a, n):
+    if n == 0:
+        return 1
+    else:
+        return a * power(a, n - 1)
+    
+print(power(float(input()), int(input())))
+
+
+Занятие 8. Функции и рекурсия
+Задача «Разворот последовательности»
+def magic():
+    a = int(input())
+    if a != 0:
+        magic()
+    print(a)
+magic()
+
+Занятие 8. Функции и рекурсия
+Задача «Числа Фибоначчи»
+def fib(n):
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+print(fib(int(input())))
