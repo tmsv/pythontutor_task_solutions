@@ -1,0 +1,164 @@
+Занятие 7. Списки
+Задача «Соседи одного знака»
+a = [int(s) for s in input().split()]
+for i in range(1, len(a)):
+    if a[i] * a[i - 1] > 0:
+        print(a[i - 1], a[i])
+        break
+
+Занятие 7. Списки		
+Задача «Больше своих соседей»
+count = 0
+a = [int(s) for s in input().split()]
+for i in range(1, len(a) - 1):
+    if a[i] > a[i - 1] and a[i] > a [i + 1]:
+        count += 1
+print(count)
+
+Занятие 7. Списки
+Задача «Наибольший элемент»
+a = [int(s) for s in input().split()]
+print(max(a), a.index(max(a)))
+
+Занятие 7. Списки
+Задача «Шеренга»
+a = [int(s) for s in input().split()]
+petya = int(input())
+petyas_position = 1
+for i in range(len(a)):
+    if petya <= a[i]:
+        petyas_position += 1
+print(petyas_position)
+
+Занятие 7. Списки
+Задача «Количество различных элементов»
+a = [int(s) for s in input().split()]
+n = 1
+for i in range(1, len(a)):
+    if a[i] != a[i - 1]:
+        n += 1
+print(n)
+
+Занятие 7. Списки
+Задача «Переставить соседние»
+a = [int(s) for s in input().split()]
+if len(a) % 2 != 0:
+    for i in range (0, len(a) - 1, 2):
+        a[i], a[i + 1] = a[i + 1], a[i]
+else:
+    for i in range (0, len(a), 2):
+      a[i], a[i + 1] = a[i + 1], a[i]
+print(' '.join([str(i) for i in a]))
+
+Занятие 7. Списки
+Задача «Переставить min и max»
+a = [int(s) for s in input().split()]
+b = max(a)
+c = min(a)
+p = a.index(b)
+v = a.index(c)
+a[p], a[v] = a[v], a[p]
+print(' '.join([str(i) for i in a]))
+
+Занятие 7. Списки
+Задача «Удалить элемент»
+a = [int(s) for s in input().split()]
+n = int(input())
+for i in range(n, len(a) - 1):
+    a[i] = a[i + 1]
+last = a.pop()
+print(' '.join([str(i) for i in a]))
+
+Занятие 7. Списки
+Задача «Вставить элемент»
+a = [int(s) for s in input().split()]
+b = [int(s) for s in input().split()]
+k = b[0]
+c = b[1]
+a.append(0)
+for i in range(len(a) - 1, k, -1):
+    a[i] = a[i - 1]
+a[k] = c
+print(' '.join([str(i) for i in a]))
+
+Занятие 7. Списки
+Задача «Количество совпадающих пар»
+a = [int(s) for s in input().split()]
+count = 0
+done_yet = []
+for i in a:
+    k = a.count(i)
+    if i not in done_yet:
+        n = (k * k - k) / 2 # муторно, но зато без вложенных циклов
+                            # и с комбинаторикой!
+                            # и значительно сокращает шаги
+                            # если входных данных много
+        done_yet.append(i)
+    elif i in done_yet:
+        continue
+    count += n
+print(int(count))
+
+Занятие 7. Списки
+Задача «Уникальные элементы»
+a = [int(s) for s in input().split()]
+for i in a:
+    if a.count(i) == 1:
+        print(i, end=' ')
+    else: #это
+        continue #необязательно :)
+		
+Занятие 7. Списки
+Задача «Кегельбан»
+N, K = [int(s) for s in input().split()]
+kegli = ['I' for i in range(N)]
+for i in range(K):
+    l, r = [int(s) for s in input().split()]
+    n = r - l
+    kegli[l-1:r] = ['.' for n in range(n+1)]
+print(''.join([str(i) for i in kegli]))
+
+Занятие 7. Списки
+Задача «Ферзи»
+x = []
+y = []
+no_yes = 0
+n = 8
+for i in range(n):  
+    new_element = [int(s) for s in input().split()]  # считываем очередной элемент
+    x.append(new_element[0])  # добавляем его в список
+    y.append(new_element[1])  # второй список
+for i in x:
+    if x.count(i) > 1:
+        no_yes += 1
+for i in y:
+    if y.count(i) > 1:
+        no_yes += 1
+for i in range(n):
+    for j in range(i + 1, n):
+        if abs(x[i] - x[j]) == abs(y[i] - y[j]):
+            no_yes += 1
+if no_yes == 0:
+    print('NO')
+else:
+    print('YES')
+	
+ЭТАЛОННОЕ:
+n = 8
+x = []
+y = []
+for i in range(n):
+    new_x, new_y = [int(s) for s in input().split()]
+    x.append(new_x)
+    y.append(new_y)
+ 
+correct = True
+for i in range(n):
+    for j in range(i + 1, n):
+        if x[i] == x[j] or y[i] == y[j] or abs(x[i] - x[j]) == abs(y[i] - y[j]):
+            correct = False
+ 
+if correct:
+    print('NO')
+else:
+    print('YES')
