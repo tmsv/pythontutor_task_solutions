@@ -110,3 +110,27 @@ for i in range(n):
             a[i][j] = 2
 for row in a:
     print(' '.join([str(elem) for elem in row]))
+    
+    
+    
+    
+ 
+ 
+ Занятие 9. Двумерные массивы
+Задача «Поменять столбцы»
+Условие
+Дан двумерный массив и два числа: i и j. Поменяйте в массиве столбцы с номерами i и j и выведите результат.
+
+Программа получает на вход размеры массива n и m, затем элементы массива, затем числа i и j.
+
+Решение оформите в виде функции swap_columns(a, i, j).
+
+n, m = [int(i) for i in input().split()]
+a = [[int(i) for i in input().split()] for j in range(n)]
+i, j = [int(i) for i in input().split()]
+def swap_columns(a, i, j):
+    for x in range(n):
+        a[x][i], a[x][j] = a[x][j], a[x][i]
+    return a
+for row in (swap_columns(a, i, j)):
+    print(' '.join([str(elem) for elem in row]))
