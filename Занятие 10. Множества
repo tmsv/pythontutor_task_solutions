@@ -33,3 +33,21 @@ print(len(set(input().split()).intersection(set(input().split()))))
 A = sorted(list(set([int(s) for s in input().split()]) & set([int(s) for s in input().split()])))
 for elem in A:
     print(elem, end=' ')
+
+
+
+
+
+Занятие 10. Множества
+Задача «Встречалось ли число раньше»
+Условие
+Во входной строке записана последовательность чисел через пробел. Для каждого числа выведите слово YES (в отдельной строке), если это число ранее встречалось в последовательности или NO, если не встречалось.
+
+L = [int(i) for i in input().split()]
+S = set()
+for i in L:
+    if i in S:
+        print('YES')
+    else:
+        print('NO')
+    S.add(i)
